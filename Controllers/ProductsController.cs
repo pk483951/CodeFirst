@@ -43,7 +43,6 @@ namespace CodeFirst.Controllers
 
         // POST: Products/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ProductId,ProductName,CategoryId,CategoryName")] Products products)
         {
             if (ModelState.IsValid)
@@ -73,7 +72,6 @@ namespace CodeFirst.Controllers
 
         // POST: Products/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ProductId,ProductName,CategoryId,CategoryName")] Products products)
         {
             if (ModelState.IsValid)
@@ -102,7 +100,6 @@ namespace CodeFirst.Controllers
 
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Products products = db.products.Find(id);
